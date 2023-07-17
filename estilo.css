@@ -1,0 +1,17 @@
+.texto {
+    color:darkgreen;
+    text-shadow: rgb(40, 146, 44) 1px 0 10px;
+}
+.scifi {
+    color:rgb(150, 57, 57);
+}
+.accion {
+    color:rgb(118, 71, 162);
+}
+.comedia {
+    color:rgb(54, 137, 143);
+}
+img{
+    border:3px solid rgb(14, 113, 179);
+}
+

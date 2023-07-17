@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hola React!</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="fetchposter.js"></script>
+
+</head>
+
+<body>
+  <!-- En este div mostraremos contenido-->
+  <div id="contenido">
+    <ul></ul>
+  </div>
+  <div id="poster">
+    <img src="">
+  </div>
+
+  <script type="text/babel">
+    // Tenemos un listado de películas
+    const peliculas = [
+      { id: 1, titulo: 'Back to the Future', genero: "scifi" },
+      { id: 2, titulo: 'Top Gun', genero: "accion" },
+      { id: 3, titulo: 'Star Wars', genero: "scifi" },
+      { id: 4, titulo: 'Revenge of the Nerds', genero: "comedia" },
+      { id: 5, titulo: 'Police Academy', genero: "comedia" },
+      { id: 6, titulo: 'Avatar', genero: "scifi" }
+    ];
+
+    // Aqui debemos determinar lo que vamos a mostrar dentro de "contenido"
+    // Deben listarse las películas, con un color de texto diferente para cada género
+    // Además debemos mostrar un poster al azar de la lista de peliculas.
+    // Al ser al azar, el poster podrá cambiar cada vez que refrescamos la página.
+    let elementoPelis = [];
+    for (let i = 0; i < peliculas.length; i++) {
+      elementoPelis[i] = (
+        <li key={peliculas[i].id} class={peliculas[i].genero}>
+          <h1>{peliculas[i].titulo}</h1>
+        </li>
+      );
+    }
+    // Luego definimos el root para renderizar allí contenido
+    const root = ReactDOM.createRoot(document.querySelector('#contenido ul'));
+    // Renderizamos con la siguiente sentencia (habría que definir antes qué tiene "elementoPelis")
+    root.render(elementoPelis);
+  </script>
+
+
+</body>
+
+</html>
